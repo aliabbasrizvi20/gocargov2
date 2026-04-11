@@ -1,0 +1,18 @@
+.offer-images{
+    display: flex;
+    justify-content: space-between;
+}
+ .offer-images img{
+    width: 300px;
+    line-height: 50px;
+} 
+.offer-heading{
+    text-align: center;
+}
+.offer-heading h3{
+    font-size: 50px;
+}
+.offer-heading h6{
+    font-size: 20px;
+    color: darkslategray;
+}

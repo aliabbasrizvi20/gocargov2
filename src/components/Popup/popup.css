@@ -1,0 +1,37 @@
+.popup-outer-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0000009e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Popup-container {
+    background: white;
+    max-width: 500px;
+    position: absolute;
+    width: 500px;
+    padding: 40px;
+}
+/* .btnas{
+    background-color: red;
+} */
+.text-info p{
+    color: darkblue;
+}
+.Image img{
+    width: 50px;
+}
+.red-btn{
+    background-color:red
+}
+.green-btn{
+    background-color: green;
+}
+.image{
+    display: flex;
+}

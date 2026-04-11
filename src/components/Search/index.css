@@ -1,0 +1,31 @@
+section{
+    
+    box-shadow: 2px 2px 2px 2px rgb(19, 19, 19);
+    width: 40%;
+    padding: 20px;
+}
+
+.txt-sty{
+    width: 100%;
+}
+
+form2{
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+
+
+
+
+forms{
+    display: inline-block;
+       width: 100%;
+}
