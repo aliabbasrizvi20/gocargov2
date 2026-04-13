@@ -275,7 +275,7 @@ function AddCar() {
                 <div className="col-md-6">
                   <div className="form-group">
                     <label id="number-label" htmlFor="number">
-                      Upload Images <small>(Upto 10)</small>
+                      Upload Images <small>(Upto 4)</small>
                     </label>
                     <UploadField
                       type="file"
