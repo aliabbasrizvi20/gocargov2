@@ -25,7 +25,7 @@ function Header() {
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
           <img src={car} className="site-icon" alt="Site Icon" />
           <span className="brand-text" style={{ color: "black" }}>
-            GoCargo
+            GoDrive
           </span>
         </Link>
 

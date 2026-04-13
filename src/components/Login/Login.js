@@ -85,7 +85,7 @@ export default function Login() {
           )}
         </div>
         <div className="sign">
-          <p>New To Gocargo?</p>
+          <p>New To GoDrive?</p>
           <Link to="/signup">SignUp</Link>
         </div>
       </div>

@@ -196,7 +196,7 @@ function CarList({ showEditDeleteButtons = false }) {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2023 GoCarGo. All rights reserved.</p>
+          <p>&copy; 2026 GoDrive. All rights reserved.</p>
           <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

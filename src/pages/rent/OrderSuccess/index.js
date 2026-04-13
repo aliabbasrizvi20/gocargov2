@@ -202,7 +202,7 @@ function OrderSuccess() {
 
           <div className="support-info">
             <p>
-              Need help? Contact us at <strong>support@gocargo.com</strong>
+              Need help? Contact us at <strong>support@GoDrive.com</strong>
             </p>
           </div>
         </div>
