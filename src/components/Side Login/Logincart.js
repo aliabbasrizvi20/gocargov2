@@ -11,15 +11,14 @@ export default function Logintocheckout({ car }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Dynamically load Razorpay script
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     document.body.appendChild(script);
-    console.log("Car data:", car); // Log car to verify price
+    console.log("Car data:", car);
 
     return () => {
-      document.body.removeChild(script); // Cleanup script when component unmounts
+      document.body.removeChild(script);
     };
   }, [car]);
 
@@ -40,10 +39,10 @@ export default function Logintocheckout({ car }) {
       return;
     }
 
-    // Create order in backend
     const { data } = await API.post(PATH.CREATE_ORDER, {
-      amount: carPrice, // dynamic price
+      amount: carPrice,
       userId: user._id,
+      carId: car._id,
     });
 
     const options = {
@@ -51,7 +50,7 @@ export default function Logintocheckout({ car }) {
       amount: data.amount,
       currency: data.currency,
       order_id: data.id,
-      name: user.name,          // dynamic name
+      name: user.name,
       description: "Car Rental Payment",
       handler: function (response) {
         navigate("/order-success", {
@@ -60,14 +59,14 @@ export default function Logintocheckout({ car }) {
             razorpayOrderId: data.orderId,
             razorpayPaymentId: response.razorpay_payment_id,
             razorpaySignature: response.razorpay_signature,
-            amount: data.amount / 100, // convert paise to INR
+            amount: data.amount / 100,
           },
         });
       },
       prefill: {
-        name: user.name,       // dynamic
-        email: user.email,     // dynamic
-        contact: user.contact, // dynamic
+        name: user.name,
+        email: user.email,
+        contact: user.contact,
       },
       theme: { color: "#3399cc" },
     };
@@ -81,9 +80,7 @@ export default function Logintocheckout({ car }) {
       <div className="price-container">
         <div className="Price">
           <h5>Total Price</h5>
-          <span id="uncrossed-price">
-            ₹{car.price?.selling_price}/hr
-          </span>
+          <span id="uncrossed-price">₹{car.price?.selling_price}/hr</span>
         </div>
         <div className="rating-box">
           <p className="rating-box-p">4.5/5</p>

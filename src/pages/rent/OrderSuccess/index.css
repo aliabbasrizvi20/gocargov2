@@ -153,7 +153,6 @@
   color: #0c5460;
 }
 
-/* Error Message */
 .error-message {
   color: #dc3545;
   font-size: 16px;
@@ -163,7 +162,6 @@
   margin: 20px 0;
 }
 
-/* Confirmation Message */
 .confirmation-message {
   background: #e7f3ff;
   border-left: 4px solid #667eea;
@@ -180,7 +178,6 @@
   line-height: 1.6;
 }
 
-/* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 15px;
@@ -228,7 +225,6 @@
   transform: translateY(-2px);
 }
 
-/* Support Info */
 .support-info {
   margin-top: 30px;
   padding-top: 20px;
@@ -241,7 +237,6 @@
   color: #333;
 }
 
-/* Responsive Design */
 @media (max-width: 600px) {
   .success-card {
     padding: 40px 25px;

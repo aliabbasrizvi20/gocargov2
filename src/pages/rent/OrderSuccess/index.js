@@ -15,7 +15,6 @@ function OrderSuccess() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Get order data from location state (passed from payment handler)
   const orderState = location.state;
 
   useEffect(() => {
@@ -27,7 +26,6 @@ function OrderSuccess() {
           return;
         }
 
-        // Verify payment first if we have Razorpay details
         if (
           orderState.razorpayOrderId &&
           orderState.razorpayPaymentId &&
@@ -40,13 +38,11 @@ function OrderSuccess() {
           });
 
           if (verifyResponse.data.success) {
-            // console.log("Payment verified successfully", verifyResponse.data);
           }
         }
 
-        // Fetch order details from database
         const orderResponse = await API.get(
-          `${PATH.GET_ORDER}/${orderState.orderId}`
+          `${PATH.GET_ORDER}/${orderState.orderId}`,
         );
 
         if (orderResponse.data) {
@@ -55,7 +51,7 @@ function OrderSuccess() {
       } catch (err) {
         console.error("Error fetching order details:", err);
         setError(err.message || "Failed to fetch order details");
-        // Set order from location state as fallback
+
         setOrder({
           _id: orderState?.orderId,
           razorpayOrderId: orderState?.razorpayOrderId,
@@ -76,7 +72,10 @@ function OrderSuccess() {
       <div className="success-container">
         <div className="success-card">
           <p>Please log in to view your order details.</p>
-          <button className="btn btn-primary" onClick={() => navigate("/login")}>
+          <button
+            className="btn btn-primary"
+            onClick={() => navigate("/login")}
+          >
             Go to Login
           </button>
         </div>
@@ -121,7 +120,6 @@ function OrderSuccess() {
     <>
       <div className="success-container">
         <div className="success-card">
-          {/* Success Icon */}
           <div className="success-icon">
             <svg viewBox="0 0 24 24" className="checkmark-animation">
               <circle
@@ -143,13 +141,11 @@ function OrderSuccess() {
             </svg>
           </div>
 
-          {/* Main Content */}
           <h1 className="success-title">Order Confirmed!</h1>
           <p className="success-subtitle">
             Your car rental booking has been successfully confirmed.
           </p>
 
-          {/* Order Details */}
           <div className="order-details">
             <div className="detail-item">
               <span className="detail-label">Order ID</span>
@@ -160,7 +156,9 @@ function OrderSuccess() {
             {orderData.razorpayOrderId && (
               <div className="detail-item">
                 <span className="detail-label">Razorpay Order ID</span>
-                <span className="detail-value">{orderData.razorpayOrderId}</span>
+                <span className="detail-value">
+                  {orderData.razorpayOrderId}
+                </span>
               </div>
             )}
             <div className="detail-item">
@@ -171,7 +169,9 @@ function OrderSuccess() {
             </div>
             <div className="detail-item">
               <span className="detail-label">Status</span>
-              <span className={`detail-value status ${orderData.status || "pending"}`}>
+              <span
+                className={`detail-value status ${orderData.status || "pending"}`}
+              >
                 {(orderData.status || "pending").toUpperCase()}
               </span>
             </div>
@@ -185,29 +185,21 @@ function OrderSuccess() {
             </div>
           </div>
 
-          {/* Message */}
           <div className="confirmation-message">
             <p>
-              A confirmation email has been sent to your registered email address.
+              A confirmation email has been sent to your registered email
+              address.
               <br />
               Our team will contact you shortly with further details.
             </p>
           </div>
 
-          {/* Action Buttons */}
           <div className="action-buttons">
-            {/* <button
-              className="btn btn-primary"
-              onClick={() => navigate("/user/orders")}
-            >
-              View All Orders
-            </button> */}
             <button className="btn btn-secondary" onClick={() => navigate("/")}>
               Back to Home
             </button>
           </div>
 
-          {/* Support Info */}
           <div className="support-info">
             <p>
               Need help? Contact us at <strong>support@gocargo.com</strong>

@@ -1,0 +1,153 @@
+.admin-dashboard {
+padding: 20px;
+min-height: 100vh;
+background: linear-gradient(135deg, #0f172a, #1e293b);
+color: white;
+font-family: Arial;
+}
+
+.admin-dashboard div {
+color: white;
+}
+
+.admin-dashboard__title {
+text-align: center;
+color: #38bdf8;
+}
+
+.admin-dashboard__section-title {
+margin-top: 30px;
+color: #fbbf24;
+}
+
+.admin-dashboard__orders-table {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.admin-dashboard__order-row {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+background: #1f2937;
+padding: 10px;
+border-radius: 10px;
+}
+
+.admin-dashboard__status {
+color: #22c55e;
+}
+
+.admin-dashboard__view-btn {
+background: #3b82f6;
+color: white;
+border: none;
+padding: 5px;
+border-radius: 6px;
+}
+
+.admin-dashboard__edit-btn {
+background: #f59e0b;
+color: white;
+border: none;
+padding: 5px;
+border-radius: 6px;
+}
+
+.admin-dashboard__delete-btn {
+background: #ef4444;
+color: white;
+border: none;
+padding: 5px;
+border-radius: 6px;
+}
+
+.admin-dashboard__btn-group {
+display: flex;
+gap: 5px;
+}
+
+.admin-dashboard__car-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 15px;
+margin-top: 10px;
+}
+
+.admin-dashboard__car-card {
+background: #111827;
+padding: 15px;
+border-radius: 12px;
+text-align: center;
+transition: 0.3s;
+}
+
+.admin-dashboard__car-card:hover {
+transform: scale(1.05);
+background: #0ea5e9;
+}
+
+.admin-dashboard__car-img {
+width: 100%;
+height: 140px;
+object-fit: cover;
+border-radius: 10px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.admin-dashboard__car-img:hover {
+transform: scale(1.05);
+opacity: 0.9;
+}
+
+.admin-dashboard__price {
+color: #22c55e;
+font-weight: bold;
+}
+
+.admin-dashboard__modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.7);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.admin-dashboard__modal-box {
+background: white;
+color: black;
+padding: 20px;
+border-radius: 10px;
+width: 300px;
+}
+
+.admin-dashboard__save-btn {
+background: green;
+color: white;
+padding: 5px;
+margin-right: 10px;
+}
+
+.admin-dashboard__cancel-btn {
+background: red;
+color: white;
+padding: 5px;
+}
+
+.admin-dashboard__denied {
+text-align: center;
+padding: 50px;
+color: red;
+font-size: 20px;
+}
+
+@media (max-width: 768px) {
+.admin-dashboard__order-row {
+grid-template-columns: 1fr;
+}
+}

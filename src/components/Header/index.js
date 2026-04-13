@@ -46,10 +46,7 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
             <li className="nav-item">
-              <Link
-                to="/owner"
-                className="nav-link host-vehicle-btn"
-              >
+              <Link to="/owner" className="nav-link host-vehicle-btn">
                 Host A Vehicle
               </Link>
             </li>
@@ -61,12 +58,6 @@ function Header() {
                 View Your Listing
               </Link>
             </li>
-            {/* <li className="nav-item">
-              <Link to="#top-cars" className="nav-link"  style={{backgroundColor:"black", borderRadius:"50px",
-              width:"137px", textAlign:"center"}}>
-                Explore
-              </Link>
-            </li> */}
           </ul>
 
           <ul className="navbar-nav ms-lg-auto align-items-center">
@@ -82,7 +73,12 @@ function Header() {
               </li>
             ) : (
               <li className="nav-item d-flex align-items-center gap-2">
-                <span className="user-badge" style={{backgroundColor:"black"}}>Hi, {user?.name || "User"}</span>
+                <span
+                  className="user-badge"
+                  style={{ backgroundColor: "black" }}
+                >
+                  Hi, {user?.name || "User"}
+                </span>
                 <button
                   onClick={onLogout}
                   className="btn btn-outline-light btn-sm logout-btn"

@@ -12,25 +12,17 @@ import AddCar from "./pages/owner/AddCar";
 import OrderSuccess from "./pages/rent/OrderSuccess";
 import OwnerAddedCarList from "./components/OwnerAddedCarList/OwnerAddedCarList";
 import { fetchCurrentUser } from "./store/auth/authAction";
-
-// export default function App() {
-//   const dispatch = useDispatch();
-//   useEffect(() => {
-//     dispatch(fetchCurrentUser());
-//     // eslint-disable-next-line react-hooks/exhaustive-deps
-//   }, []);
+import AdminDashboard from "./components/Admin/adminDashboard";
 
 export default function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const token = localStorage.getItem("token"); // check token first
-    if (token) { // only fetch if token exists
+    const token = localStorage.getItem("token");
+    if (token) {
       dispatch(fetchCurrentUser());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   return (
     <BrowserRouter>
@@ -43,12 +35,12 @@ export default function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="order-success" element={<OrderSuccess />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Route>
         {/* Owner Routes */}
         <Route path="/owner" element={<OwnerLayout />}>
           <Route index element={<AddCar />} />
           <Route path="your-listing" element={<OwnerAddedCarList />} />
-
         </Route>
       </Routes>
     </BrowserRouter>

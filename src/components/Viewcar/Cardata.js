@@ -18,26 +18,20 @@ export default function CarData({
   Des,
   Price,
   car,
-}){
+}) {
+  const [editCarDetail, setEditCarDetail] = useState(false);
+  const [newAddress, setNewAddress] = useState("");
 
-    const [editCarDetail,setEditCarDetail]=useState(false);
-    const [newAddress,setNewAddress]=useState("");
-    //  const [newDescription,setNewDescription]=useState("");
-      // const [newPrice,setNewPrice]=useState("");
-    // setCarDetail([Detail,Des,Price])
-    // console.log([car]);
-   
-const handleData=()=>{
-  API.post('/car',{withCredentials:true})
-  .then(res=>{
-    console.log(res.data)
-  })
-  .catch(err=>console.error(err))
-}
-const onChangeHost=(e)=>{
-  setNewAddress(e.target.value)
-}
-
+  const handleData = () => {
+    API.post("/car", { withCredentials: true })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.error(err));
+  };
+  const onChangeHost = (e) => {
+    setNewAddress(e.target.value);
+  };
 
   return (
     <>
@@ -52,11 +46,9 @@ const onChangeHost=(e)=>{
               <img src={Banner} />
             </div>
             <div className="side-images">
-              {
-                Images.slice(0, 4).map(function (url) {
-                  return <img src={url} />;
-                })
-              }
+              {Images.slice(0, 4).map(function (url) {
+                return <img src={url} />;
+              })}
             </div>
           </div>
 
@@ -65,9 +57,7 @@ const onChangeHost=(e)=>{
               Hosted By <b>{Detail}</b>
             </h6>
             <h6>{Des}</h6>
-            <h5>
-              {Price}
-            </h5>
+            <h5>{Price}</h5>
           </div>
         </div>
 
@@ -101,5 +91,4 @@ const onChangeHost=(e)=>{
       )}
     </>
   );
-
 }

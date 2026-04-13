@@ -12,21 +12,6 @@ function UploadField({
   accept,
 }) {
   const [internalError, setInternalError] = useState("");
-  // const  onInputChange = (e) => {
-
-  //     if(pattern){
-  //         const regex = new RegExp(pattern)
-  //        let isMatched = regex.test(e.target.value);
-  //        if(!isMatched) {
-
-  //           setInternalError("Email not valid!");
-  //        }
-  //        else {
-  //         setInternalError("");
-  //        }
-  //        onChange(e);
-  //     }
-  // }
 
   return (
     <div className="input-field-section">
