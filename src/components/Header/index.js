@@ -26,7 +26,7 @@ function Header() {
           <img src={car} className="site-icon" alt="Site Icon" />
           <span className="brand-text" style={{ color: "black" }}>
             GoDrive
-            // added new name here 
+            
           </span>
         </Link>
 
