@@ -47,14 +47,14 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
             <li className="nav-item">
-              <Link to="/owner" className="nav-link host-vehicle-btn">
+              <Link to="/owner" className="nav-link host-vehicle-btn" style={{borderRadius:"50px"}}>
                 Host A Vehicle
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 to="/owner/your-listing"
-                className="nav-link view-listing-btn"
+                className="nav-link view-listing-btn" style={{borderRadius:"50px"}}
               >
                 View Your Listing
               </Link>
@@ -67,7 +67,7 @@ function Header() {
                 <Link
                   to="/login"
                   className="btn btn-primary btn-sm login-btn"
-                  style={{ background: "cadetblue" }}
+                  style={{ background: "cadetblue", borderRadius:"50px" }}
                 >
                   Log In
                 </Link>
