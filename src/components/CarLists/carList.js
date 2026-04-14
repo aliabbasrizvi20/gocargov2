@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { PUBLIC_API } from "../../helpers/requests";
 import { getCoordinatesFromGoogle } from "../../helpers/methods";
-import car from "../../assets/car.svg";
+import tick from "../../assets/check-mark.png"
+import cars from "../../assets/cars.png"
+import delivery from "../../assets/fast-delivery.png"
+import pay from "../../assets/mobile-payment.png"
 
 function CarList({ showEditDeleteButtons = false }) {
   const [list, setList] = useState([]);
@@ -173,22 +176,22 @@ function CarList({ showEditDeleteButtons = false }) {
 
       <div className="benefits-section">
         <div className="benefit">
-          <img src={car} alt="benefit" />
+          <img src={tick} alt="benefit" />
           <h3>100%</h3>
           <p>Hassle free Secured Trip</p>
         </div>
         <div className="benefit">
-          <img src={car} alt="benefit" />
+          <img src={cars} alt="benefit" />
           <h3>25000+</h3>
           <p>Quality cars in the city</p>
         </div>
         <div className="benefit">
-          <img src={car} alt="benefit" />
+          <img src={delivery} alt="benefit" />
           <h3>Delivery</h3>
           <p>Anywhere, Anytime</p>
         </div>
         <div className="benefit">
-          <img src={car} alt="benefit" />
+          <img src={pay} alt="benefit" />
           <h3>Endless</h3>
           <p>Pay by hour, drive limitless</p>
         </div>

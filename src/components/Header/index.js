@@ -8,7 +8,7 @@ import {
 } from "../../store/auth/authSelector";
 import { logoutUser } from "../../store/auth/authAction";
 import Button from "../Button";
-
+import logo from "../../assets/carlogo.png"
 function Header() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const user = useSelector(selectUser);
@@ -23,7 +23,7 @@ function Header() {
     <nav className="navbar navbar-expand-lg custom-navbar sticky-top">
       <div className="container-fluid">
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
-          <img src={car} className="site-icon" alt="Site Icon" />
+          <img src={logo} className="site-icon" alt="Site Icon" />
           <span className="brand-text" style={{ color: "black" }}>
             GoDrive
             
